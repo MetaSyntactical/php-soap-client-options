@@ -1,0 +1,34 @@
+{
+  "name": "metasyntactical/php-soap-client-options",
+  "description": "Allows for handling PHP Soap Client options in a way that validity and type safety are assured.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "David Weichert",
+      "email": "david.weichert@juit.de"
+    }
+  ],
+  "require": {
+    "php": "7.2.*|7.3.*",
+    "ext-soap": "*",
+    "beberlei/assert": "^3.2"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.15",
+    "phpstan/phpstan": "^0.11.16",
+    "phpunit/phpunit": "^8",
+    "vimeo/psalm": "^3.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "MetaSyntactical\\SoapClientOptions\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MetaSyntactical\\SoapClientOptions\\": "tests/"
+    }
+  },
+  "minimum-stability": "stable"
+}
