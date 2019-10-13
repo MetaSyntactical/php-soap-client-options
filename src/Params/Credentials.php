@@ -33,8 +33,8 @@ final class Credentials
      */
     public function __construct(string $login, string $password)
     {
-        Assertion::minLength(1, $login, 'Expected login to contain at least %2$s characters. Got: %s');
-        Assertion::minLength(1, $password, 'Expected password to contain at least %2$s characters. Got: %s');
+        Assertion::minLength($login, 1, 'Expected login to contain at least %2$s characters. Got: %s');
+        Assertion::minLength($password, 1, 'Expected password to contain at least %2$s characters. Got: %s');
         $this->login = $login;
         $this->password = $password;
     }

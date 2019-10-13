@@ -29,11 +29,11 @@ final class Security
     /**
      * Security constructor.
      *
-     * @param null|bool $verifyPeer
-     * @param null|bool $verifyPeerName
-     * @param null|bool $allowSelfSigned
+     * @param bool $verifyPeer      OPTIONAL defaults to true
+     * @param bool $verifyPeerName  OPTIONAL defaults to true
+     * @param bool $allowSelfSigned OPTIONAL defaults to false
      */
-    public function __construct(?bool $verifyPeer = true, ?bool $verifyPeerName = true, ?bool $allowSelfSigned = false)
+    public function __construct(bool $verifyPeer = true, bool $verifyPeerName = true, bool $allowSelfSigned = false)
     {
         $this->verifyPeer = $verifyPeer;
         $this->verifyPeerName = $verifyPeerName;

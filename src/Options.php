@@ -19,12 +19,12 @@ use MetaSyntactical\SoapClientOptions\Params\Security;
 class Options
 {
     /**
-     * @var Credentials
+     * @var null|Credentials
      */
     private $credentials;
 
     /**
-     * @var Debug
+     * @var null|Debug
      */
     private $debug;
 
@@ -34,12 +34,12 @@ class Options
     private $location;
 
     /**
-     * @var Proxy
+     * @var null|Proxy
      */
     private $proxy;
 
     /**
-     * @var Security
+     * @var null|Security
      */
     private $security;
 
@@ -102,7 +102,7 @@ class Options
     private function getStreamContext()
     {
         $context = null;
-        if (is_null($this->security)) {
+        if (!is_null($this->security)) {
             $context = stream_context_create([
                 'ssl' => [
                     'verify_peer' => $this->security->isVerifyPeer(),

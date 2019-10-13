@@ -40,7 +40,7 @@ final class Location
         Assertion::greaterOrEqualThan($port, 0, 'Expected a port number greater than or equal to %2$s. Got: %s');
         Assertion::lessOrEqualThan($port, 65535, 'Expected a port number lesser than or queal to %2$s. Got: %s');
         $this->baseUrl = $baseUrl;
-        $this->port = $port;
+        $this->port = (int) $port;
     }
 
     /**

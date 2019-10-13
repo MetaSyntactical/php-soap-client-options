@@ -19,9 +19,9 @@ final class Debug
     /**
      * Debug constructor.
      *
-     * @param null|bool $trace
+     * @param bool $trace OPTIONAL defaults to false
      */
-    public function __construct(?bool $trace = false)
+    public function __construct(bool $trace = false)
     {
         $this->trace = $trace;
     }
