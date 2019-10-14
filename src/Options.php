@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace MetaSyntactical\SoapClientOptions;
 
+use MetaSyntactical\SoapClientOptions\Params\CacheWsdl;
 use MetaSyntactical\SoapClientOptions\Params\Credentials;
 use MetaSyntactical\SoapClientOptions\Params\Debug;
 use MetaSyntactical\SoapClientOptions\Params\Location;
@@ -50,6 +51,11 @@ class Options
     private $soapVersion;
 
     /**
+     * @var null|CacheWsdl
+     */
+    private $cacheWsdl;
+
+    /**
      * Options constructor.
      *
      * @param Location         $location
@@ -58,15 +64,24 @@ class Options
      * @param null|Proxy       $proxy
      * @param null|Security    $security
      * @param null|SoapVersion $soapVersion
+     * @param null|CacheWsdl   $cacheWsdl
      */
-    public function __construct(Location $location, ?Credentials $credentials = null, ?Debug $debug = null, ?Proxy $proxy = null, ?Security $security = null, ?SoapVersion $soapVersion = null)
-    {
+    public function __construct(
+        Location $location,
+        ?Credentials $credentials = null,
+        ?Debug $debug = null,
+        ?Proxy $proxy = null,
+        ?Security $security = null,
+        ?SoapVersion $soapVersion = null,
+        ?CacheWsdl $cacheWsdl = null
+    ) {
         $this->credentials = $credentials;
         $this->debug = $debug;
         $this->location = $location;
         $this->proxy = $proxy;
         $this->security = $security;
         $this->soapVersion = $soapVersion;
+        $this->cacheWsdl = $cacheWsdl;
     }
 
     /**
@@ -103,6 +118,9 @@ class Options
         }
         if (!is_null($this->soapVersion)) {
             $options['soap_version'] = (string) $this->soapVersion;
+        }
+        if (!is_null($this->cacheWsdl)) {
+            $options['cache_wsdl'] = (string) $this->cacheWsdl;
         }
 
         return $options;
