@@ -111,6 +111,7 @@ class Options
         }
         if (!is_null($this->debug)) {
             $options['trace'] = $this->debug->isTrace();
+            $options['exceptions'] = $this->debug->isConvertErrorsToSoapFaults();
         }
         if (!is_null($this->proxy)) {
             $options['proxy_host'] = $this->proxy->getHost();
