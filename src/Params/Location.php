@@ -17,11 +17,13 @@ final class Location
 {
     /**
      * @var string
+     * @readonly
      */
     private $baseUrl;
 
     /**
      * @var int
+     * @readonly
      */
     private $port;
 
@@ -45,6 +47,7 @@ final class Location
 
     /**
      * @return string
+     * @psalm-mutation-free
      */
     public function getBaseUrl(): string
     {
@@ -53,6 +56,7 @@ final class Location
 
     /**
      * @return string
+     * @psalm-mutation-free
      */
     public function getPort(): string
     {

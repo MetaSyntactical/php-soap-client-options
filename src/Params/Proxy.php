@@ -17,11 +17,13 @@ final class Proxy
 {
     /**
      * @var string
+     * @readonly
      */
     private $host;
 
     /**
      * @var string
+     * @readonly
      */
     private $port;
 
@@ -45,6 +47,7 @@ final class Proxy
 
     /**
      * @return string
+     * @psalm-mutation-free
      */
     public function getHost(): string
     {
@@ -53,6 +56,7 @@ final class Proxy
 
     /**
      * @return string
+     * @psalm-mutation-free
      */
     public function getPort(): string
     {

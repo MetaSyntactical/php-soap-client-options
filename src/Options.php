@@ -68,6 +68,7 @@ class Options
      * constructor.
      *
      * @see \SoapClient
+     * @psalm-mutation-free
      *
      * @param string $endpoint SOAP service endpoint (URL without base URL and port)
      *
@@ -97,6 +98,8 @@ class Options
     }
 
     /**
+     * @psalm-mutation-free
+     *
      * @return null|resource
      */
     private function getStreamContext()

@@ -15,11 +15,13 @@ final class Credentials
 {
     /**
      * @var string
+     * @readonly
      */
     private $login;
 
     /**
      * @var string
+     * @readonly
      */
     private $password;
 
@@ -41,6 +43,7 @@ final class Credentials
 
     /**
      * @return string
+     * @psalm-mutation-free
      */
     public function getLogin(): string
     {
@@ -49,6 +52,7 @@ final class Credentials
 
     /**
      * @return string
+     * @psalm-mutation-free
      */
     public function getPassword(): string
     {

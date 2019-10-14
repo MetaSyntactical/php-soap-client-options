@@ -13,6 +13,7 @@ final class Debug
 {
     /**
      * @var bool
+     * @readonly
      */
     private $trace;
 
@@ -28,6 +29,7 @@ final class Debug
 
     /**
      * @return bool
+     * @psalm-mutation-free
      */
     public function isTrace(): bool
     {

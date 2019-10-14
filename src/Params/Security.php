@@ -13,16 +13,19 @@ final class Security
 {
     /**
      * @var bool
+     * @readonly
      */
     private $verifyPeer;
 
     /**
      * @var bool
+     * @readonly
      */
     private $verifyPeerName;
 
     /**
      * @var bool
+     * @readonly
      */
     private $allowSelfSigned;
 
@@ -42,6 +45,7 @@ final class Security
 
     /**
      * @return bool
+     * @psalm-mutation-free
      */
     public function isVerifyPeer(): bool
     {
@@ -50,6 +54,7 @@ final class Security
 
     /**
      * @return bool
+     * @psalm-mutation-free
      */
     public function isVerifyPeerName(): bool
     {
@@ -58,6 +63,7 @@ final class Security
 
     /**
      * @return bool
+     * @psalm-mutation-free
      */
     public function isAllowSelfSigned(): bool
     {
