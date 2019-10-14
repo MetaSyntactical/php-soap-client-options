@@ -9,6 +9,7 @@ use MetaSyntactical\SoapClientOptions\Params\Debug;
 use MetaSyntactical\SoapClientOptions\Params\Location;
 use MetaSyntactical\SoapClientOptions\Params\Proxy;
 use MetaSyntactical\SoapClientOptions\Params\Security;
+use MetaSyntactical\SoapClientOptions\Params\SoapVersion;
 
 /**
  * Class Options.
@@ -44,6 +45,11 @@ class Options
     private $security;
 
     /**
+     * @var null|SoapVersion
+     */
+    private $soapVersion;
+
+    /**
      * Options constructor.
      *
      * @param Location         $location
@@ -51,14 +57,16 @@ class Options
      * @param null|Debug       $debug
      * @param null|Proxy       $proxy
      * @param null|Security    $security
+     * @param null|SoapVersion $soapVersion
      */
-    public function __construct(Location $location, ?Credentials $credentials = null, ?Debug $debug = null, ?Proxy $proxy = null, ?Security $security = null)
+    public function __construct(Location $location, ?Credentials $credentials = null, ?Debug $debug = null, ?Proxy $proxy = null, ?Security $security = null, ?SoapVersion $soapVersion = null)
     {
         $this->credentials = $credentials;
         $this->debug = $debug;
         $this->location = $location;
         $this->proxy = $proxy;
         $this->security = $security;
+        $this->soapVersion = $soapVersion;
     }
 
     /**
@@ -92,6 +100,9 @@ class Options
         if (!is_null($this->proxy)) {
             $options['proxy_host'] = $this->proxy->getHost();
             $options['proxy_port'] = $this->proxy->getPort();
+        }
+        if (!is_null($this->soapVersion)) {
+            $options['soap_version'] = (string) $this->soapVersion;
         }
 
         return $options;
