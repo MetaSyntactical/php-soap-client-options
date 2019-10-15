@@ -13,7 +13,8 @@ return PhpCsFixer\Config::create()
         'concat_space' => ['spacing' => 'one'],
         'heredoc_indentation' => true,
         'single_line_comment_style' => [],
+        'final_class' => true,
     ])
-    ->setRiskyAllowed(false)
+    ->setRiskyAllowed(true)
     ->setFinder($finder)
 ;
