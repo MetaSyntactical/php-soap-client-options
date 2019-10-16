@@ -11,6 +11,6 @@ namespace MetaSyntactical\SoapClientOptions\Params;
  */
 final class SoapVersion extends AbstractEnum
 {
-    public const SOAP_1_1 = SOAP_1_1;
-    public const SOAP_1_2 = SOAP_1_2;
+    public const SOAP_1_1 = 1; // SOAP_1_1;
+    public const SOAP_1_2 = 2; // SOAP_1_2;
 }

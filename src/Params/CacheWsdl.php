@@ -11,8 +11,8 @@ namespace MetaSyntactical\SoapClientOptions\Params;
  */
 final class CacheWsdl extends AbstractEnum
 {
-    public const WSDL_CACHE_NONE = WSDL_CACHE_NONE;
-    public const WSDL_CACHE_DISK = WSDL_CACHE_DISK;
-    public const WSDL_CACHE_MEMORY = WSDL_CACHE_MEMORY;
-    public const WSDL_CACHE_BOTH = WSDL_CACHE_BOTH;
+    public const WSDL_CACHE_NONE = 0; // WSDL_CACHE_NONE;
+    public const WSDL_CACHE_DISK = 1; // WSDL_CACHE_DISK;
+    public const WSDL_CACHE_MEMORY = 2; // WSDL_CACHE_MEMORY;
+    public const WSDL_CACHE_BOTH = 3; // WSDL_CACHE_BOTH;
 }
