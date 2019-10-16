@@ -18,7 +18,7 @@ use MetaSyntactical\SoapClientOptions\Params\SoapVersion;
  * @todo alternative constructor (from options array, as validator)
  * @todo add more params for options like 'soap_version', 'uri', 'style', ...
  */
-class Options
+final class Options
 {
     /**
      * @var null|Credentials
