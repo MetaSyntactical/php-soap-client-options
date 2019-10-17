@@ -104,7 +104,7 @@ final class Options
         $options['location'] = $this->location->getBaseUrl() . ':' . $this->location->getPort() . '/' . $endpoint;
         if (!is_null($this->credentials)) {
             $options['login'] = $this->credentials->getLogin();
-            $options['password'] = $this->credentials->getLogin();
+            $options['password'] = $this->credentials->getPassword();
         }
         if (!is_null($streamContext)) {
             $options['stream_context'] = $streamContext;
